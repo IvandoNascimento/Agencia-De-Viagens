@@ -4,5 +4,5 @@ public interface IdentidadeI {
 
     String getNome();
 
-    void setNome();
+    void setNome(String nome);
 }

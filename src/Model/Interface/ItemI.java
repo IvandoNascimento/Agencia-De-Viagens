@@ -4,6 +4,6 @@ public interface ItemI {
 
     int getCodigo();
 
-    void setCodigo();
+    void setCodigo(int codigo);
 }
 

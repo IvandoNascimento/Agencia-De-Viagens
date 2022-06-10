@@ -37,6 +37,7 @@ public abstract class Produto implements Comparable, IdentidadeI, ItemI {
         return codigo;
     }
 
+    @Override
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
@@ -45,6 +46,8 @@ public abstract class Produto implements Comparable, IdentidadeI, ItemI {
     public String getNome() {
         return nome;
     }
+
+    @Override
     public void setNome(String nome) {
         this.nome = nome;
     }

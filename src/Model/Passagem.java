@@ -1,8 +1,5 @@
 package Model;
 
-
-
-
 import Model.Exception.PassagemException;
 
 
@@ -20,11 +17,9 @@ public class Passagem extends Produto{
     public int getQuantidade() {
         return quantidade;
     }
-
     public Lugar getDestino() {
         return destino;
     }
-
 
     @Override
     public String toString() {
@@ -38,7 +33,6 @@ public class Passagem extends Produto{
     public int compareTo(Object o) {
         return 0;
     }
-
     @Override
     public double calculaPreco() {
         setPreco((getDestino().getPreco())*getQuantidade());
@@ -50,17 +44,6 @@ public class Passagem extends Produto{
                 || this.getNome() == null ) {
             throw new PassagemException();
         }
-    }
-
-
-    @Override
-    public void setNome() {
-
-    }
-
-    @Override
-    public void setCodigo() {
-
     }
 }
 

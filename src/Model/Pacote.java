@@ -13,8 +13,6 @@ public class Pacote extends Produto{
         this.passagem = passagem;
         this.dias = dias;
     }
-
-
     public int getDias() {
         return dias;
     }
@@ -41,17 +39,6 @@ public class Pacote extends Produto{
         if(this.getPassagem() == null || this.getDias() <= 0 || this.getCodigo() < 0 || this.getNome() == null){
             throw new PacoteException();
         }
-    }
-
-
-    @Override
-    public void setNome() {
-
-    }
-
-    @Override
-    public void setCodigo() {
-
     }
 }
 

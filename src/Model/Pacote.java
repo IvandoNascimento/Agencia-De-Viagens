@@ -40,5 +40,13 @@ public class Pacote extends Produto{
             throw new PacoteException();
         }
     }
+
+    @Override
+    public String toString() {
+        return "Pacote{" +
+                "passagem=" + passagem +
+                ", dias=" + dias +
+                "} ";
+    }
 }
 

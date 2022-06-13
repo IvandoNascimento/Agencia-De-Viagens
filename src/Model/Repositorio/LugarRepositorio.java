@@ -8,7 +8,7 @@ public class LugarRepositorio implements Serializable {
 
     public ArrayList<Lugar> listaDeLugares;
 
-    Lugar procurar(String nome){
+    public Lugar procurar(String nome){
         int nomeProcurado = -1;
         for (int i =0; i<listaDeLugares.toArray().length; i++) {
             if (listaDeLugares.get(i) != null && listaDeLugares.get(i).getNome().equals(nome)) {
@@ -62,6 +62,28 @@ public class LugarRepositorio implements Serializable {
         LugarRepositorio resp = (LugarRepositorio) ois.readObject();
         ois.close();
         return resp;
+    }
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        Lugar SaoPaulo = new Lugar("Sao paulo",500);
+        Lugar RioDeJaneiro= new Lugar("Rio de Janeiro",1000);
+        Lugar Recife = new Lugar("Recife",350);
+        Lugar PortoAlegre = new Lugar("Porto Alegre",1200);
+        LugarRepositorio repositorio = new LugarRepositorio();
+        repositorio.listaDeLugares = new ArrayList<>();
+        repositorio.inserir(SaoPaulo);
+        repositorio.inserir(RioDeJaneiro);
+        repositorio.inserir(Recife);
+        repositorio.inserir(PortoAlegre);
+        String arquivoRepositorio = "./src/Model/Repositorio/repositorio.lugar";
+        repositorio.salvarRepositorio(arquivoRepositorio);
+        LugarRepositorio teste = LugarRepositorio.carregarRepositorio("./src/Model/Repositorio/repositorio.lugar");
+        for (Lugar l: teste.listaDeLugares
+        ) {
+            System.out.println(l);
+
+        }
+
+
     }
 }
 

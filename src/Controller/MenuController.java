@@ -16,12 +16,15 @@ public class MenuController {
     @FXML
     private Button cadastrar;
 
-
+    @FXML
+    private Button reservar;
 
 
 
     @FXML
     public void mudaTela(ActionEvent event) throws IOException {
+
+
 
         Button botao =(Button) event.getSource();
 

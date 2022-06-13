@@ -4,14 +4,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="Controller.MenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
    <AnchorPane prefHeight="400.0" prefWidth="600.0">
-      <Button layoutX="387.0" layoutY="208.0" mnemonicParsing="false" text="Visualizar reservas"
-              fx:id="visualizar" />
-      <Button layoutX="109.0" layoutY="208.0" mnemonicParsing="false" text="Cadastrar Cliente"
-              fx:id="cadastrar" onAction="#mudaTela"/>
+      <Button fx:id="visualizar" layoutX="248.0" layoutY="253.0" mnemonicParsing="false" onAction="#mudaTela" prefHeight="25.0" prefWidth="114.0" text="Visualizar reservas" />
+      <Button fx:id="cadastrar" layoutX="248.0" layoutY="103.0" mnemonicParsing="false" onAction="#mudaTela" prefHeight="25.0" prefWidth="114.0" text="Cadastrar Cliente" />
+      <Button fx:id="reservar" layoutX="248.0" layoutY="178.0" mnemonicParsing="false" onAction="#mudaTela" prefHeight="25.0" prefWidth="114.0" text="Reservar" />
    </AnchorPane>
 </VBox>

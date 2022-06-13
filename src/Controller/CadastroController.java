@@ -4,13 +4,13 @@ package Controller;
 
 import Model.Cliente;
 
-import Model.Repositorio.Repositorio;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.*;
 
-import java.io.IOException;
+
 
 
 public class CadastroController  {

@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.Lugar;
+
 import Model.Repositorio.Repositorio;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +18,7 @@ public class AgenciaApplication extends Application {
     private static Scene menuScene;
     private static Scene cadastroScene;
     private static Scene reservaScene;
+    private static Scene listaDeReservasScene;
 
     @Override
     public void start(Stage primaryStage) throws IOException, ClassNotFoundException {
@@ -29,6 +30,8 @@ public class AgenciaApplication extends Application {
         cadastroScene = new Scene(fxmlCadastro,640,400);
         Parent fxmlReserva = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/View/Reserva.fxml")));
         reservaScene = new Scene(fxmlReserva,640,400);
+        Parent fxmlListaDeReserva = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/View/ListaDeReservas.fxml")));
+        listaDeReservasScene = new Scene(fxmlListaDeReserva,640,400);
 
         Repositorio.inicializar();
 
@@ -39,8 +42,9 @@ public class AgenciaApplication extends Application {
     public static void mudaTela(String tela)  {
         switch (tela) {
             case "cadastrar" -> stage.setScene(cadastroScene);
-            case "menu" -> stage.setScene(menuScene);
+            case "menu", "voltar" -> stage.setScene(menuScene);
             case "reservar" -> stage.setScene(reservaScene);
+            case "visualizar" -> stage.setScene(listaDeReservasScene);
         }
     }
 

@@ -8,32 +8,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="Controller.CadastroController">
-    <AnchorPane VBox.vgrow="ALWAYS">
-        <TextField fx:id="nomeCliente" layoutX="86.0" layoutY="116.0">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CadastroController">
+    <AnchorPane prefHeight="400.0" prefWidth="657.0" VBox.vgrow="ALWAYS">
+        <Label layoutX="210.0" layoutY="14.0" text="Tela de Cadastro">
             <font>
-                <Font size="18.0" />
+                <Font size="24.0" />
             </font>
-        </TextField>
+        </Label>
         <Label fx:id="nome" layoutX="88.0" layoutY="83.0" text="Nome">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
+        <TextField fx:id="nomeCliente" layoutX="86.0" layoutY="116.0">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextField>
         <Label fx:id="idade" layoutX="350.0" layoutY="83.0" text="Idade">
             <font>
                 <Font size="18.0" />
-            </font>
-        </Label>
-        <Label fx:id="telefone" layoutX="88.0" layoutY="167.0" text="Telefone">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Label>
-        <Label layoutX="249.0" layoutY="14.0" text="Tela de Cadastro">
-            <font>
-                <Font size="24.0" />
             </font>
         </Label>
         <TextField fx:id="idadeCliente" layoutX="350.0" layoutY="116.0">
@@ -41,6 +35,11 @@
                 <Font size="18.0" />
             </font>
         </TextField>
+        <Label fx:id="telefone" layoutX="88.0" layoutY="167.0" text="Telefone">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
         <TextField fx:id="numero" layoutX="86.0" layoutY="201.0">
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
@@ -49,10 +48,15 @@
                 <Font size="18.0" />
             </font>
         </TextField>
-        <Button fx:id="cadastrar" layoutX="415.0" layoutY="291.0" mnemonicParsing="false" onAction="#Cadastrar" text="Cadastrar">
-            <font>
-                <Font size="20.0" />
-            </font>
-        </Button>
+      <Button fx:id="voltar" layoutX="86.0" layoutY="296.0" mnemonicParsing="false" onAction="#mudarTela" prefHeight="52.0" prefWidth="170.0" text="Voltar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="cadastrar" layoutX="404.0" layoutY="296.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="52.0" prefWidth="170.0" text="Cadastrar Cliente">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
     </AnchorPane>
 </VBox>

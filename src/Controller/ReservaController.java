@@ -6,28 +6,28 @@ import Model.Lugar;
 import Model.Pacote;
 import Model.Passagem;
 import Model.Repositorio.Repositorio;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ResourceBundle;
 
 
 public class ReservaController implements Initializable {
-
     @FXML
     private TextField hospedagem;
-
     @FXML
-    private TextField dias;
-
+    private DatePicker checkin;
+    @FXML
+    private DatePicker checkout;
     @FXML
     private ChoiceBox<String> lugar;
-
     @FXML
-    private Button comprar;
+    private Button voltar;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -41,24 +41,23 @@ public class ReservaController implements Initializable {
             lugar.getItems().add(t.getNome());
         }
     }
-    @FXML
-    public void comprar() throws PacoteException {
 
-        String hospedesQtd = hospedagem.getText();
-        String diasQtd = dias.getText();
-        String lugarEscolhido = lugar.getValue();
+    public void reservar() throws PacoteException {
+        long dias = Duration.between(checkin.getValue().atStartOfDay(),checkout.getValue().atStartOfDay()).toDays();
 
         Passagem p = new Passagem("a",Integer.parseInt(
                 hospedagem.getText()),Repositorio.lugares.procurar(lugar.getValue()));
-        Pacote pacoteCliente = new Pacote(p.getNome(),p,Integer.parseInt(dias.getText()));
+        Pacote pacoteCliente = new Pacote(p.getNome(),p, (int) dias);
         System.out.println(pacoteCliente);
         Repositorio.pacotes.AdicionarPacote(pacoteCliente);
 
-
-        System.out.println("teste");
-
-
         AgenciaApplication.mudaTela("menu");
+
+    }
+
+    public void mudarTela(ActionEvent event){
+        Button botao =(Button) event.getSource();
+        AgenciaApplication.mudaTela(botao.getId());
     }
 
 

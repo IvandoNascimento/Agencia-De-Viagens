@@ -12,22 +12,14 @@ public class MenuController {
 
     @FXML
     private Button visualizar;
-
     @FXML
     private Button cadastrar;
-
     @FXML
     private Button reservar;
 
-
-
     @FXML
-    public void mudaTela(ActionEvent event) throws IOException {
-
-
-
+    public void mudaTela(ActionEvent event) {
         Button botao =(Button) event.getSource();
-
         AgenciaApplication.mudaTela(botao.getId());
     }
 }
